@@ -7,10 +7,12 @@ export interface ICarousel {
 export interface IImageList {
     header: string,
     items: IImageItem[],
-    listType: ImageListType
+    listType: ImageListType,
+    theme: ITheme
 }      
 
 export interface ICard {
+    theme: ITheme,
     imageItem: IImageItem,
     cardSize: CardSizeType
 }

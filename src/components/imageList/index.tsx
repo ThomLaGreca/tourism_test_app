@@ -1,10 +1,9 @@
-import React, { useContext, useRef } from 'react';
+import React, { useRef } from 'react';
 import { IImageList } from '../_types/interface';
 import styles from './imageList.module.css';
 import Card from '../card';
 import CarouselButton from '../carouselButton';
 import { CardSizeType, ImageListType, PositionType } from '../_types/enum';
-import { AppContext, AppContextProps } from '../../contexts/appContext';
 
 // The scroll functionality here I feel could have been improved. 
 // Mainly with handling the 'MouseDown' event to enable a press-and-hold type of scroll.
@@ -16,10 +15,7 @@ import { AppContext, AppContextProps } from '../../contexts/appContext';
 
 // The key on the items.map() function is technically not unique. Another time choice.
 
-const ImageList: React.FC<IImageList> = ({ header, items, listType }) => {
-
-    const {theme} = useContext(AppContext) as AppContextProps;
-
+const ImageList: React.FC<IImageList> = ({ header, items, listType, theme }) => {
     const cardSize = listType === ImageListType.CAROUSEL ? CardSizeType.LARGE : CardSizeType.SMALL;
 
     const listTypeStyles = listType === ImageListType.CAROUSEL ? styles.carousel : styles.fixed;
@@ -37,14 +33,14 @@ const ImageList: React.FC<IImageList> = ({ header, items, listType }) => {
     }
 
     return (
-        <div className={`${styles.container} ${styles.lightTheme}`}>
+        <div className={styles.container}>
             <header className={styles.header}>
                 <h2 className={styles.headerText} style={{ color: theme.values.fontPrimary }}>{header}</h2>
             </header>
 
             <div className={`${styles.innerContainer} ${listTypeStyles}`} ref={innerContainerRef}>
                 {items && items.map((item, index) => {
-                    return <Card key={`${index}_${Math.random}`} imageItem={item} cardSize={cardSize} />
+                    return <Card key={`${index}_${Math.random}`} imageItem={item} cardSize={cardSize} theme={theme} />
                 })}
             </div>
 

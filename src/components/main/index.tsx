@@ -56,12 +56,14 @@ const Main: React.FC = () => {
       <ToggleButton />
       <div className={styles.innerContainer}>
         <SearchBar />
-        <Panel {...theme}>
+        <Panel>
           <ImageList
+            theme={theme}
             header="Popular around you"
             items={filteredPopularItems}
             listType={ImageListType.CAROUSEL} />
           <ImageList
+            theme={theme} 
             header="Featured"
             items={featuredItems}
             listType={ImageListType.FIXED} />

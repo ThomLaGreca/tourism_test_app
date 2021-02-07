@@ -1,14 +1,11 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { ICard } from '../_types/interface';
 import styles from './card.module.css';
 import { IoLocationSharp } from 'react-icons/io5';
 import LoaderSpinner from '../loading';
 import { CardSizeType } from '../_types/enum';
-import { AppContext, AppContextProps } from '../../contexts/appContext';
 
-const Card: React.FC<ICard> = ({ imageItem, cardSize }) => {
-
-    const {theme} = useContext(AppContext) as AppContextProps;
+const Card: React.FC<ICard> = ({ imageItem, cardSize, theme }) => {
 
     const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
 

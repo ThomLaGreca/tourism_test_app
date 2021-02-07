@@ -31,10 +31,6 @@
   font-size: 16px;
 }
 
-.lightTheme {
-  color: var(--colors-font-primary);
-}
-
 .innerContainer::-webkit-scrollbar {
   display: none;
 }
