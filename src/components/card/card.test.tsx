@@ -3,7 +3,7 @@ import React from 'react';
 import {render} from '@testing-library/react';
 
 import Card from '.';
-import { CardSize } from '../_types';
+import { CardSizeType } from '../_types/enum';
 
 const testProps = {
     imageItem: {
@@ -15,8 +15,7 @@ const testProps = {
 }
 
 test('Card - Simple props are rendered successfully.', () => {
-    const { getByText } = render(<Card imageItem={testProps.imageItem} cardSize={CardSize.LARGE}/>) 
-
+    const { getByText } = render(<Card imageItem={testProps.imageItem} cardSize={CardSizeType.LARGE}/>) 
     getByText(testProps.imageItem.title);
     getByText(testProps.imageItem.location);
 

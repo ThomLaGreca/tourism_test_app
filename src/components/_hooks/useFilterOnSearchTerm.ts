@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useEffect } from 'react';
-import { ImageItem } from '../_types';
+import { IImageItem } from '../_types/interface';
 
-export function useFilterOnSearchTerm(items: ImageItem[], searchTerm: string): [filteredItems: ImageItem[]] {
+export function useFilterOnSearchTerm(items: IImageItem[], searchTerm: string): [filteredItems: IImageItem[]] {
 
     const [filteredItems, setFilteredItems] = useState(items)
 

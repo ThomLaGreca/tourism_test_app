@@ -24,7 +24,9 @@
   overflow-x: scroll;
   justify-content: start;
 }
-
+.header{
+  padding: 5px;
+}
 .headerText {
   font-size: 16px;
 }

@@ -1,9 +1,13 @@
 import React, { useContext } from 'react';
 import { darkTheme } from '../../constants/themeConstants';
-import { useTheme } from '../hooks/useTheme';
+import { useTheme } from '../_hooks/useTheme';
 import styles from './toggleButton.module.css';
 import Switch from 'react-switch';
 import { AppContext, AppContextProps } from '../../contexts/appContext';
+
+// Using a library for the toggle button would obviously require a discussion IRL. 
+// The value vs gain in this case proved obvious.
+
 const ToggleButton: React.FC = () => {
 
   const context = useContext(AppContext) as AppContextProps;

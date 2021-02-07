@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
-import { CardProps, CardSize } from '../_types';
+import React, { useContext, useState } from 'react';
+import { ICard } from '../_types/interface';
 import styles from './card.module.css';
 import { IoLocationSharp } from 'react-icons/io5';
 import LoaderSpinner from '../loading';
+import { CardSizeType } from '../_types/enum';
+import { AppContext, AppContextProps } from '../../contexts/appContext';
 
-const Card: React.FC<CardProps> = ({ imageItem, cardSize }) => {
+const Card: React.FC<ICard> = ({ imageItem, cardSize }) => {
+
+    const {theme} = useContext(AppContext) as AppContextProps;
 
     const [imageLoaded, setImageLoaded] = useState<Boolean>(false);
 
     const getImageSize = () => {
-        return cardSize === CardSize.SMALL
+        return cardSize === CardSizeType.SMALL
             ? styles.containerSmall
             : styles.containerLarge
     }
 
     return (
-        <div className={styles.containerLight}>
+        <div className={styles.containerLight} style={{ 
+             border: `3px ${theme.values.background} solid`
+        }}>
             <div className={getImageSize()}>
                 <img
                     style={{ display: imageLoaded ? 'initial' : 'none'}}
@@ -27,11 +33,11 @@ const Card: React.FC<CardProps> = ({ imageItem, cardSize }) => {
 
             </div>
 
-            <div className={styles.footer}>
-                <h3 className={styles.title}>{imageItem.title}</h3>
+            <div className={styles.footer} style={{ backgroundColor: theme.values.background }}>
+                <h3 className={styles.title} style={{color: theme.values.fontPrimary}}>{imageItem.title}</h3>
                 <div className={styles.location}>
                     <IoLocationSharp color={'var(--colors-font-secondary)'} size={12} />
-                    <p>{imageItem.location}</p>
+                    <p style={{color: theme.values.fontSecondary}}>{imageItem.location}</p>
                 </div>
 
             </div>

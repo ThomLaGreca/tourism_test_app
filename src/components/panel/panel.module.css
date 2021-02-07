@@ -7,7 +7,3 @@
    min-width: 1155px;
    border-radius: 3px;
 }
-
-.lightTheme {
-   background-color: var(--colors-lightest); 
-}

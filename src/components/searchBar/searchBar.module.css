@@ -11,6 +11,21 @@
     border-radius: 4px;
     width: 30vw;
     border: var(--colors-light) 1px solid;
-    outline-color: var(--colors-font-secondary);
     padding: 5px 10px;
+    outline-width: 1px;
+
+    
 }
+.searchInput::placeholder{
+  color: var(--colors-light);
+}
+
+/* Remove the clear button on the search input  */
+
+.searchInput::-ms-clear {  display: none; width : 0; height: 0; }
+.searchInput::-ms-reveal {  display: none; width : 0; height: 0; }
+.searchInput::-webkit-search-decoration,
+.searchInput::-webkit-search-cancel-button,
+.searchInput::-webkit-search-results-button,
+.searchInput::-webkit-search-results-decoration { display: none; }
+

@@ -1,17 +1,9 @@
 .containerLight {
     margin: 5px 5px 0 5px;
-    border: 3px var(--colors-light) solid;
-    border-radius: 3px;
+    border-radius: 4px;
     position: relative;
 }
 
-.containerLight h3 {
-    color: var(--colors-font-primary);
-}
-
-.containerLight p {
-    color: var(--colors-font-secondary);
-}
 
 .containerSmall {
     width: 265px;
@@ -27,8 +19,6 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
     user-select: none;
     -moz-user-select: none;
     -webkit-user-drag: none;
@@ -37,9 +27,6 @@
 }
 
 .footer {
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    background-color: var(--colors-light);
     display: flex;
     flex-direction: column;
     justify-content: center;

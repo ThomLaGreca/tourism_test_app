@@ -15,9 +15,10 @@ import SearchBar from '../searchBar';
 import Panel from '../panel';
 import ImageList from '../imageList';
 import endpoints from '../../constants/endpoints'
-import { ImageItemApiResponse, ImageListType } from '../_types'
-import { useFilterOnSearchTerm } from '../hooks/useFilterOnSearchTerm';
+import { ImageItemApiResponse } from '../_types/interface'
+import { useFilterOnSearchTerm } from '../_hooks/useFilterOnSearchTerm';
 import ToggleButton from '../toggleButton';
+import { ImageListType } from '../_types/enum';
 
 const Main: React.FC = () => {
 
@@ -47,7 +48,7 @@ const Main: React.FC = () => {
 
   }, [setFeaturedItems, setPopularItems])
 
-  //  Where the top level components should live is I think a question of style. 
+  //  Top level components would normally not be in the components folder.
   //  I would (if there was more than 1) normally put them in thier own folder named 'pages' or 'screens' as a sibling of components.;
 
   return (
@@ -55,7 +56,7 @@ const Main: React.FC = () => {
       <ToggleButton />
       <div className={styles.innerContainer}>
         <SearchBar />
-        <Panel>
+        <Panel {...theme}>
           <ImageList
             header="Popular around you"
             items={filteredPopularItems}

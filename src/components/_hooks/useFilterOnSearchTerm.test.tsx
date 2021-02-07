@@ -1,10 +1,10 @@
 import {
     renderHook
 } from '@testing-library/react-hooks';
-import { ImageItem } from '../_types';
+import { IImageItem } from '../_types/interface';
 import { useFilterOnSearchTerm } from './useFilterOnSearchTerm';
 
-const testingItems: ImageItem[] = [
+const testingItems: IImageItem[] = [
     {
         title: 'T',
         location: 'TEST',
