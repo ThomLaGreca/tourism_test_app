@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.innerContainer {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  align-items: center;
+}
+
+.fixed {
+  justify-content: space-around;
+}
+
+.carousel {
+
+  overflow-x: scroll;
+  justify-content: start;
+}
+
+.headerText {
+  font-size: 16px;
+}
+
+.lightTheme {
+  color: var(--colors-font-primary);
+}
+
+.innerContainer::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.innerContainer {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}

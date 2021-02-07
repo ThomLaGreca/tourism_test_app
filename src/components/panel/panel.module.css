@@ -1,0 +1,13 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   padding: 15px;
+   height: 100%;
+   min-height: 638px;
+   min-width: 1155px;
+   border-radius: 3px;
+}
+
+.lightTheme {
+   background-color: var(--colors-lightest); 
+}

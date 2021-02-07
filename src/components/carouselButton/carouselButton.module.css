@@ -1,0 +1,28 @@
+.container{
+    outline: 0;
+    border:0;
+    height: 90%;
+    width: 54px;
+    background-color: #e1e1e1;
+    opacity: .1;
+    position: absolute;
+    transition: opacity .4s ease;
+    border-radius: 3px;
+    bottom: 0;
+}
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.container:hover{
+  opacity: .5;
+  cursor: pointer;
+}
+.container:active {
+  opacity: .9;
+}
+

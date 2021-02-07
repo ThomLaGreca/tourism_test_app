@@ -1,0 +1,15 @@
+.container {
+  position: fixed;
+  top: 35px;
+  right: 35px;
+}
+
+.label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.label span{
+  padding-right: 10px;
+}
